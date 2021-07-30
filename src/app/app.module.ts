@@ -36,6 +36,9 @@ import {SpecialtiesModule} from './specialties/specialties.module';
 import {HttpErrorHandler} from './error.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+//import { ToastrModule } from 'ngx-toastr';
+
+
 
 @NgModule({
   declarations: [
@@ -54,6 +57,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     PartsModule,
     BrowserAnimationsModule,
     AppRoutingModule
+     //, ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [
     HttpErrorHandler,

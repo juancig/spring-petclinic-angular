@@ -19,7 +19,6 @@
 /**
  * @author Vitaliy Fedoriv
  */
-
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PageNotFoundComponent} from './parts/page-not-found/page-not-found.component';

@@ -20,7 +20,7 @@
  * @author Vitaliy Fedoriv
  */
 
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {OwnerService} from '../owner.service';
 import {Owner} from '../owner';
 import {Router} from '@angular/router';
@@ -33,6 +33,11 @@ import {Router} from '@angular/router';
 export class OwnerListComponent implements OnInit {
   errorMessage: string;
   owners: Owner[];
+
+  @Input() owner: Owner;
+  responseStatus: number;
+  deleteSuccess = false;
+
 
   constructor(private router: Router, private ownerService: OwnerService) {
   }
@@ -50,5 +55,15 @@ export class OwnerListComponent implements OnInit {
   addOwner() {
     this.router.navigate(['/owners/add']);
   }
+
+  deleteOwner(owner: Owner) {
+      this.ownerService.deleteOwner(owner.id.toString()).subscribe(
+        response => {
+          this.deleteSuccess = true;
+          this.owners = this.owners.filter(currentItem => !(currentItem.id === owner.id));
+        },
+        error => this.errorMessage = error as any);      
+  }
+
 
 }

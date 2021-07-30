@@ -19,11 +19,11 @@
 <div class="container-fluid">
   <div class="container xd-container">
 
-    <h2>Specialties</h2>
+    <h2>Especialidades</h2>
     <table id="specialties" class="table table-striped">
       <thead>
       <tr>
-        <th>Name</th>
+        <th>Nombre</th>
         <th></th>
         <th></th>
       </tr>
@@ -34,8 +34,8 @@
           <input [id]=element_id [readonly]="true" type="text" class="form-control" [(ngModel)]="specialty.name" name="spec_name" />
         </td>
         <td>
-          <button class="btn btn-default" (click)="showEditSpecialtyComponent(specialty)">Edit</button>
-          <button class="btn btn-default" (click)="deleteSpecialty(specialty)">Delete</button>
+          <button class="btn btn-default" title="Editar" (click)="showEditSpecialtyComponent(specialty)"><i class="fas fa-pencil-alt"></i></button>
+          <button class="btn btn-default" title="Borrar" (click)="deleteSpecialty(specialty)"><i class="far fa-trash-alt"></i></button>
         </td>
       </tr>
       </tbody>
@@ -44,8 +44,8 @@
       <app-specialty-add (newSpeciality)="onNewSpecialty($event)">...</app-specialty-add>
     </div>
     <div>
-      <button class="btn btn-default" (click)="gotoHome()">Home</button>
-      <button class="btn btn-default" (click)="showAddSpecialtyComponent()"> Add </button>
+      <button class="btn btn-default" title="Inicio" (click)="gotoHome()"><i class="fas fa-home"></i></button>
+      <button class="btn btn-default" title="Agregar" (click)="showAddSpecialtyComponent()"><i class="fas fa-plus"></i></button>
     </div>
   </div>
 </div>

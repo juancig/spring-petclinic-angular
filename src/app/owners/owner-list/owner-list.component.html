@@ -18,16 +18,16 @@
 
 <div class="container-fluid">
   <div class="container xd-container">
-    <h2>Owners</h2>
+    <h2>Dueño</h2>
     <div class="table-responsive">
       <table class="table table-striped">
         <thead>
         <tr>
-          <th>Name</th>
-          <th>Address</th>
-          <th>City</th>
-          <th>Telephone</th>
-          <th>Pets</th>
+          <th>Nombre</th>
+          <th>Direccion</th>
+          <th>Ciudad</th>
+          <th>Telefono</th>
+          <th>Mascotas</th>
         </tr>
         </thead>
 
@@ -39,15 +39,16 @@
           <td>{{ owner.city }}</td>
           <td>{{ owner.telephone }}</td>
           <td>
-        <tr *ngFor="let pet of owner.pets">
-          {{ pet.name }}
-        </tr>
-        </td>
+          <tr *ngFor="let pet of owner.pets">
+            {{ pet.name }}
+          </tr>
+          </td>
+          <td><button class="btn btn-default" title="Borrar Dueño" (click)="deleteOwner(owner)"><i class="far fa-trash-alt"></i></button></td>
         </tr>
         </tbody>
       </table>
       <div>
-        <button class="btn btn-default" (click)="addOwner()">Add Owner</button>
+        <button class="btn btn-default" title="Agregar Dueño" (click)="addOwner()"><i class="fas fa-plus"></i></button>
       </div>
     </div>
   </div>

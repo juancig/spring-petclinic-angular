@@ -19,13 +19,13 @@
 <div class="container-fluid">
   <div class="container xd-container">
 
-    <h2>Veterinarians</h2>
+    <h2>Veterinarios</h2>
 
     <table id="vets" class="table table-striped">
       <thead>
       <tr>
-        <th>Name</th>
-        <th>Specialties</th>
+        <th>Nombre</th>
+        <th>Especialidad</th>
         <th></th>
         <th></th>
       </tr>
@@ -41,14 +41,14 @@
           </div>
         </td>
         <td>
-          <button class="btn btn-default" (click)="editVet(vet)">Edit Vet</button>
-          <button class="btn btn-default" (click)="deleteVet(vet)">Delete Vet</button>
+          <button class="btn btn-default" title="Editar Veterinario" (click)="editVet(vet)"><i class="fas fa-pencil-alt"></i></button>
+          <button class="btn btn-default" title="Borrar Veterinario" (click)="deleteVet(vet)"><i class="far fa-trash-alt"></i></button>
         </td>
       </tr>
       </tbody>
     </table>
     <div>
-      <button class="btn btn-default" (click)="gotoHome()">Home</button>
-      <button class="btn btn-default" (click)="addVet()">Add Vet</button>
+      <button class="btn btn-default" title="Inicio" (click)="gotoHome()"><i class="fas fa-home"></i></button>
+      <button class="btn btn-default" title="Agregar Veterinario" (click)="addVet()"><i class="fas fa-plus"></i></button>
     </div>
   </div>

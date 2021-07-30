@@ -20,7 +20,7 @@
   <div class="container xd-container">
 
     <h2>
-      Pet
+      Editar Mascota
     </h2>
     <form class="form-horizontal" (ngSubmit)="onSubmit(petForm.value)" #petForm="ngForm">
       <div class="form-group" hidden="true">
@@ -28,7 +28,7 @@
         <input type="text" hidden="true" class="form-control" id="owner" [(ngModel)]="pet.owner" name="owner"/>
       </div>
       <div class="form-group">
-        <label for="owner" class="col-sm-2 control-label">Owner</label>
+        <label for="owner" class="col-sm-2 control-label">Dueño</label>
         <div class="col-sm-10">
           <input id="owner_name" name="owner_name" class="form-control" type="text"
                  value="{{ currentOwner.firstName }} {{ currentOwner.lastName }}" readonly/>
@@ -36,20 +36,20 @@
       </div>
       <br/>
       <div class="form-group ">
-        <label for="name" class="col-sm-2 control-label">Name</label>
+        <label for="name" class="col-sm-2 control-label">Nombre</label>
         <div class="col-sm-10">
           <input id="name" name="name" class="form-control" type="text" [(ngModel)]="pet.name"/>
         </div>
       </div>
       <div class="form-group ">
-        <label class="col-sm-2 control-label">Birth Date</label>
+        <label class="col-sm-2 control-label">Fecha de Nacimiento</label>
         <input matInput [matDatepicker]="birthDateDatepicker" [ngModel]="pet.birthDate | date:'yyyy-MM-dd'" name="birthDate">
         <mat-datepicker-toggle matSuffix [for]="birthDateDatepicker"></mat-datepicker-toggle>
         <mat-datepicker #birthDateDatepicker></mat-datepicker>
       </div>
       <div class="control-group">
         <div class="form-group ">
-          <label for="type" class="col-sm-2 control-label">Type </label>
+          <label for="type" class="col-sm-2 control-label">Tipo </label>
           <div class="col-sm-10">
             <div class="col-sm-2">
               <input id="type1" name="type1" class="form-control" type="text" value="{{ currentType.name }}" readonly/>
@@ -68,8 +68,8 @@
       <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
           <br/>
-          <button class="btn btn-default" type="button" (click)="gotoOwnerDetail(pet.owner)">< Back</button>
-          <button class="btn btn-default" type="submit">Update Pet</button>
+          <button class="btn btn-default" title="Atras" type="button" (click)="gotoOwnerDetail(pet.owner)"><i class="fas fa-arrow-left"></i></button>
+          <button class="btn btn-default" title="Actualizar Mascota" type="submit"><i class="fas fa-check"></i></button>
         </div>
       </div>
     </form>

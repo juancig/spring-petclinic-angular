@@ -19,36 +19,36 @@
 <div class="container-fluid">
   <div class="container xd-container">
 
-    <h2>Owner Information</h2>
+    <h2>Informacion del Dueño</h2>
 
 
     <table class="table table-striped">
       <tr>
-        <th>Name</th>
+        <th>Nombre</th>
         <td><b>{{ owner.firstName }} {{ owner.lastName }}</b></td>
       </tr>
       <tr>
-        <th>Address</th>
+        <th>Direccion</th>
         <td>{{ owner.address }}</td>
       </tr>
       <tr>
-        <th>City</th>
+        <th>Ciudad</th>
         <td>{{ owner.city }}</td>
       </tr>
       <tr>
-        <th>Telephone</th>
+        <th>Telefono</th>
         <td>{{ owner.telephone }}</td>
       </tr>
     </table>
 
-    <button class="btn btn-default" (click)="gotoOwnersList()">< Back</button>
-    <button class="btn btn-default" (click)="editOwner()">Edit Owner</button>
-    <button class="btn btn-default" (click)="addPet(owner)">Add New Pet</button>
+    <button class="btn btn-default" (click)="gotoOwnersList()">< Atras</button>
+    <button class="btn btn-default" (click)="editOwner()">Editar Dueño</button>
+    <button class="btn btn-default" (click)="addPet(owner)">Agregar Mascota</button>
 
     <br/>
     <br/>
     <br/>
-    <h2>Pets and Visits</h2>
+    <h2>Mascotas y Visitas</h2>
 
     <table class="table table-striped">
       <tr>
