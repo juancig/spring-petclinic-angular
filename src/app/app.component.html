@@ -33,7 +33,7 @@
         </a>
       </li>
 
-      <li class="dropdown">
+      <li class="dropdown" *ngIf="isLoggedIn">
         <a class="dropdown-toggle" data-toggle="dropdown" role="button"
            aria-haspopup="true" aria-expanded="false"> Dueños<span class="caret"></span>
         </a>
@@ -41,7 +41,8 @@
           <li>
             <a routerLink="/owners">
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-              <span> Todo</span></a></li>
+              <span> Todo</span></a>
+          </li>
           <li>
             <a routerLink="/owners/add">
               <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span> Nuevo</span>
@@ -49,7 +50,7 @@
           </li>
         </ul>
       </li>
-      <li class="dropdown">
+      <li class="dropdown" *ngIf="isLoggedIn">
         <a class="dropdown-toggle" data-toggle="dropdown" role="button"
            aria-haspopup="true" aria-expanded="false"> Veterinarios<span class="caret"></span>
         </a>
@@ -63,17 +64,41 @@
                                               aria-hidden="true"></span><span>  Nuevo</span></a></li>
         </ul>
       </li>
-      <li>
+      <li *ngIf="isLoggedIn">
         <a routerLink="/pettypes" routerLinkActive="active" title="pettypes">
           <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
           <span> Tipos de Mascotas</span>
         </a>
       </li>
-      <li>
+      <li *ngIf="isLoggedIn">
         <a routerLink="/specialties" routerLinkActive="active" title="specialties">
           <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
           <span> Especialidades</span>
         </a>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav" *ngIf="!isLoggedIn">
+      <!-- li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Registrarse</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li -->
+      <li>
+        <a routerLink="/login" routerLinkActive="active" title="login">
+          <!-- span class="glyphicon glyphicon-th-list" aria-hidden="true"></span -->
+          <span> Login</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <!-- li class="nav-item">
+        <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+      </li -->
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
       </li>
     </ul>
 

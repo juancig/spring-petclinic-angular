@@ -22,7 +22,7 @@
 
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
@@ -35,14 +35,23 @@ import {PartsModule} from './parts/parts.module';
 import {SpecialtiesModule} from './specialties/specialties.module';
 import {HttpErrorHandler} from './error.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { LoginComponent } from './security/login/login.component';
+import { RegisterComponent } from './security/register/register.component';
+import { ProfileComponent } from './security/profile/profile.component';
+
+import { authInterceptorProviders } from './security/_helpers/auth.interceptor';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
 //import { ToastrModule } from 'ngx-toastr';
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,9 +67,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AppRoutingModule
      //, ToastrModule.forRoot() // ToastrModule added
+     
+     , FormsModule 
+     , ReactiveFormsModule     
+     , MatButtonModule
+     , MatInputModule
+     , MatCardModule 
   ],
   providers: [
     HttpErrorHandler,
+    authInterceptorProviders
   ],
   bootstrap: [AppComponent]
 })
